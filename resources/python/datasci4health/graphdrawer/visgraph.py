@@ -1,15 +1,16 @@
 from IPython.display import IFrame
 import json
 import uuid
+import os
 
 def vis_network(nodes, edges, physics=True):
     html = """
     <html>
     <head>
       <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
-      <meta content="utf-8" http-equiv="encoding">        
-      <script type="text/javascript" src="../../../resources/python/datasci4health/graphdrawer/vis.js"></script>
-      <link href="../../../resources/python/datasci4health/graphdrawer/vis.css" rel="stylesheet" type="text/css">
+      <meta content="utf-8" http-equiv="encoding">    
+      <script type="text/javascript" src="https://thedatasociety.github.io/resources/purl/lab-neo4j/graphdrawer/vis.js"></script>
+      <link   type="text/css"       href="https://thedatasociety.github.io/resources/purl/lab-neo4j/graphdrawer/vis.css" rel="stylesheet" >
     </head>
     <body>
 
@@ -60,7 +61,12 @@ def vis_network(nodes, edges, physics=True):
     unique_id = str(uuid.uuid4())
     html = html.format(id=unique_id, nodes=json.dumps(nodes), edges=json.dumps(edges), physics=json.dumps(physics))
 
-    filename = "figure/graph-{}.html".format(unique_id)
+    try:
+        os.makedirs('graphs')
+    except OSError as e:
+        pass 
+    
+    filename = "graphs/graph-{}.html".format(unique_id)
 
     file = open(filename, "w+")
     file.write(html)
