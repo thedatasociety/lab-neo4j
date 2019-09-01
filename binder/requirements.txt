@@ -14,7 +14,6 @@ jupyterlab
 jupyter_contrib_nbextensions
 jupyterlab_launcher
 jupyterlab-git
-jupyterlab_iframe
 ipywidgets
 RISE
 
@@ -26,6 +25,7 @@ jupyter-server-proxy
 
 numpy
 pandas
+matplotlib
 plotly
 py2neo
 ipython-cypher
