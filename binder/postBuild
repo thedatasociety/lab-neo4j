@@ -18,8 +18,8 @@ jupyter labextension install @jupyterlab/git --no-build
 jupyter serverextension enable --py jupyterlab_git
 
 # Jupyter/Lab extension for iframe/url https://github.com/timkpaine/jupyterlab_iframe
-jupyter labextension install jupyterlab_iframe --no-build 
-jupyter serverextension enable --py jupyterlab_iframe 
+#jupyter labextension install jupyterlab_iframe --no-build 
+#jupyter serverextension enable --py jupyterlab_iframe 
 
 # Github Jupyter Lab extension
 jupyter labextension install @jupyterlab/github --no-build 
@@ -42,11 +42,36 @@ jupyter serverextension enable --sys-prefix jupyter_server_proxy
 jupyter labextension install jupyterlab-server-proxy
 
 # JupyterLab extension mimerenderer to render HTML files in IFrame Tab. https://github.com/mflevine/jupyterlab_html
-jupyter labextension install @mflevine/jupyterlab_html --no-build 
+#jupyter labextension install @mflevine/jupyterlab_html --no-build 
 
 # Building everything up
 jupyter lab build --dev
 
 ###############################################################
-#          /jupyter/jupyterlab extensions/kernels              #
+#             moving to a local installation folder           #
 ###############################################################
+
+mkdir ~/resources/local
+cd    ~/resources/local
+
+###############################################################
+#             neo4j installation commands                   #
+###############################################################
+
+export NEO4J_VERSION=2.3.12
+echo "export NEO4J_VERSION=${NEO4J_VERSION}" >> ~/.bashrc
+echo "export NEO4J_VERSION=${NEO4J_VERSION}" >> ~/.profile
+
+export NEO4J_HOME=$(pwd)/neo4j-community-${NEO4J_VERSION}
+echo "export NEO4J_HOME=${NEO4J_HOME}"       >> ~/.bashrc
+echo "export NEO4J_HOME=${NEO4J_HOME}"       >> ~/.profile
+
+wget https://neo4j.com/artifact.php?name=neo4j-community-${NEO4J_VERSION}-unix.tar.gz -q          && \
+mv   artifact.php?name=neo4j-community-${NEO4J_VERSION}-unix.tar.gz neo4j-${NEO4J_VERSION}.tar.gz && \
+tar  -xvf neo4j-${NEO4J_VERSION}.tar.gz >/dev/null                                                && \
+rm   neo4j-${NEO4J_VERSION}.tar.gz                                                                && \
+mv   neo4j-community-${NEO4J_VERSION} neo4j-${NEO4J_VERSION}
+
+# adding bin and sbin to $path
+echo "export PATH=\$PATH:\$NEO4J_HOME/bin"  >> ~/.bashrc
+echo "export PATH=\$PATH:\$NEO4J_HOME/bin"  >> ~/.profile
