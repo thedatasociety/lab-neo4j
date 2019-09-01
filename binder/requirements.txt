@@ -21,5 +21,15 @@ RISE
 jupyter-server-proxy
 
 ###############################################################
-#          /jupyter/jupyterlab extensions/kernels              #
+#          /jupyter/jupyterlab extensions/kernels             #
 ###############################################################
+
+numpy
+pandas
+plotly
+py2neo
+urllib
+ipython-cypher
+networkx
+igraph
+jgraph
