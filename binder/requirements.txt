@@ -28,7 +28,6 @@ numpy
 pandas
 plotly
 py2neo
-urllib
 ipython-cypher
 networkx
 igraph
