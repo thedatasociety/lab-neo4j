@@ -21,7 +21,7 @@
 </div>
 <!-- /ds header -->
 
-# lab-neo4j
+# neo4j sandbox
 
 A repository for launching laboratories.
 
