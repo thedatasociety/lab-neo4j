@@ -100,10 +100,24 @@ def draw(graph, options, physics=False, limit=100):
     def get_vis_info(node, id):
         node_label = list(node.labels)[0]
         prop_key = options.get(node_label)
-        vis_label = node[prop_key]
+        vis_label = node['label']
+        
+        if node['label'] == None:
 
-        return {"id": id, "label": vis_label, "group": node_label, "title": repr(dict(node))}
+            return {
+                    "id": id, 
+                    "label": "\n{}".format(node.labels), 
+                    "group": node_label, "title": "Type(s) = {} <br/> Properties = ".format(node_label)+repr(dict(node))
+                   }
+        else:
 
+            return {
+                    "id": id, 
+                    "label": "\n\n{} ({})".format(node.labels,node['label']), 
+                    "group": node_label, "title": "Type(s) = {} <br/> Properties = ".format(node_label)+repr(dict(node))
+                   }
+
+    
     for row in data:
         source_node = row[0]
         source_id = row[1]
