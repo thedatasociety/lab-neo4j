@@ -1,0 +1,53 @@
+
+    <html>
+    <head>
+      <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+      <meta content="utf-8" http-equiv="encoding">    
+      <script type="text/javascript" src="https://thedatasociety.github.io/resources/purl/lab-neo4j/graphdrawer/vis.js"></script>
+      <link   type="text/css"       href="https://thedatasociety.github.io/resources/purl/lab-neo4j/graphdrawer/vis.css" rel="stylesheet" >
+    </head>
+    <body>
+
+    <div id="9fe6ef9b-a978-4f49-95b8-07bdf189530d"></div>
+
+    <script type="text/javascript">
+      var nodes = [{"id": 2, "label": "\n:Person", "group": "Person", "title": "Type(s) = Person <br/> Properties = {'name': 'Asdrubal'}"}, {"id": 7, "label": "\n:Person", "group": "Person", "title": "Type(s) = Person <br/> Properties = {'name': 'Lais'}"}, {"id": 6, "label": "\n:Movie", "group": "Movie", "title": "Type(s) = Movie <br/> Properties = {'title': 'Inglourious Basterds', 'year': 2009}"}, {"id": 35, "label": "\n:Manufacturer", "group": "Manufacturer", "title": "Type(s) = Manufacturer <br/> Properties = {'name': 'Coca Cola'}"}, {"id": 55, "label": "\n:Drink", "group": "Drink", "title": "Type(s) = Drink <br/> Properties = {'name': 'Coke Zero', 'calories': 0}"}, {"id": 134, "label": "\n\n:Filme (Django)", "group": "Filme", "title": "Type(s) = Filme <br/> Properties = {'titulo': 'Django', 'ano': 2009, 'label': 'Django'}"}, {"id": 4, "label": "\n\n:Pessoa (Laura)", "group": "Pessoa", "title": "Type(s) = Pessoa <br/> Properties = {'nome': 'Laura Lero', 'label': 'Laura'}"}, {"id": 131, "label": "\n\n:Filme (Django)", "group": "Filme", "title": "Type(s) = Filme <br/> Properties = {'titulo': 'Django', 'ano': 2009, 'label': 'Django'}"}, {"id": 20, "label": "\n\n:Filme (Matrix)", "group": "Filme", "title": "Type(s) = Filme <br/> Properties = {'titulo': 'The Matrix', 'ano': 1999, 'label': 'Matrix'}"}, {"id": 3, "label": "\n:Person", "group": "Person", "title": "Type(s) = Person <br/> Properties = {'name': 'Marcos'}"}, {"id": 39, "label": "\n:Person", "group": "Person", "title": "Type(s) = Person <br/> Properties = {'name': 'Asdrubal'}"}, {"id": 37, "label": "\n:Drink", "group": "Drink", "title": "Type(s) = Drink <br/> Properties = {'name': 'Mountain Dew', 'calories': 9000}"}, {"id": 36, "label": "\n:Manufacturer", "group": "Manufacturer", "title": "Type(s) = Manufacturer <br/> Properties = {'name': 'Pepsi'}"}, {"id": 1, "label": "\n:Person", "group": "Person", "title": "Type(s) = Person <br/> Properties = {'name': 'Drew', 'age': 20}"}, {"id": 38, "label": "\n\n:Pessoa (Prof. Fulano)", "group": "Pessoa", "title": "Type(s) = Pessoa <br/> Properties = {'profissao': 'Professor', 'nome': 'Fulano Silva', 'label': 'Prof. Fulano'}"}, {"id": 133, "label": "\n\n:Pessoa (Matheus)", "group": "Pessoa", "title": "Type(s) = Pessoa <br/> Properties = {'nome': 'Matheus Mota', 'label': 'Matheus'}"}, {"id": 130, "label": "\n\n:Pessoa (Matheus)", "group": "Pessoa", "title": "Type(s) = Pessoa <br/> Properties = {'nome': 'Matheus Mota', 'label': 'Matheus'}"}, {"id": 91, "label": "\n\n:Pessoa (Prof. Fulano)", "group": "Pessoa", "title": "Type(s) = Pessoa <br/> Properties = {'profissao': 'Professor', 'nome': 'Fulano Silva', 'label': 'Prof. Fulano'}"}, {"id": 70, "label": "\n:Person", "group": "Person", "title": "Type(s) = Person <br/> Properties = {'name': 'Asdrubal'}"}, {"id": 71, "label": "\n:Person", "group": "Person", "title": "Type(s) = Person <br/> Properties = {'name': 'Marcos'}"}, {"id": 0, "label": "\n:Person", "group": "Person", "title": "Type(s) = Person <br/> Properties = {'name': 'Nicole', 'age': 24}"}, {"id": 40, "label": "\n:Person", "group": "Person", "title": "Type(s) = Person <br/> Properties = {'name': 'Marcos'}"}, {"id": 132, "label": "\n\n:TipoA (meu primeiro n\u00f3)", "group": "TipoA", "title": "Type(s) = TipoA <br/> Properties = {'propriedade2': 'valor2', 'propriedade1': 'valor1', 'label': 'meu primeiro n\u00f3'}"}, {"id": 90, "label": "\n\n:TipoA (meu primeiro n\u00f3)", "group": "TipoA", "title": "Type(s) = TipoA <br/> Properties = {'propriedade2': 'valor2', 'propriedade1': 'valor1', 'label': 'meu primeiro n\u00f3'}"}, {"id": 110, "label": "\n\n:Pessoa (Eng. Cicrano)", "group": "Pessoa", "title": "Type(s) = Pessoa <br/> Properties = {'profissao': 'Engenheiro de dados', 'nome': 'Cicrano Junior', 'label': 'Eng. Cicrano'}"}, {"id": 111, "label": "\n\n:Pessoa (Eng. Cicrano)", "group": "Pessoa", "title": "Type(s) = Pessoa <br/> Properties = {'profissao': 'Engenheiro de dados', 'nome': 'Cicrano Junior', 'label': 'Eng. Cicrano'}"}, {"id": 5, "label": "\n:Person", "group": "Person", "title": "Type(s) = Person <br/> Properties = {'name': 'Matheus'}"}];
+      var edges = [{"from": 7, "to": 6, "label": "LIKES"}, {"from": 35, "to": 55, "label": "MAKES"}, {"from": 4, "to": 131, "label": "DEU_LIKE"}, {"from": 4, "to": 20, "label": "DEU_DESLIKE"}, {"from": 36, "to": 37, "label": "MAKES"}, {"from": 1, "to": 37, "label": "LIKES"}, {"from": 133, "to": 134, "label": "DEU_LIKE"}, {"from": 130, "to": 131, "label": "DEU_LIKE"}, {"from": 0, "to": 37, "label": "LIKES"}, {"from": 0, "to": 55, "label": "LIKES"}, {"from": 5, "to": 6, "label": "LIKES"}];
+
+      var container = document.getElementById("9fe6ef9b-a978-4f49-95b8-07bdf189530d");
+
+      var data = {
+        nodes: nodes,
+        edges: edges
+      };
+
+      var options = {
+          nodes: {
+              shape: 'dot',
+              size: 25,
+              font: {
+                  size: 14
+              }
+          },
+          edges: {
+              font: {
+                  size: 14,
+                  align: 'middle'
+              },
+              color: 'gray',
+              arrows: {
+                  to: {enabled: true, scaleFactor: 0.5}
+              },
+              smooth: {enabled: false}
+          },
+          physics: {
+              enabled: true
+          }
+      };
+
+      var network = new vis.Network(container, data, options);
+
+    </script>
+    </body>
+    </html>
+    

@@ -9,7 +9,7 @@ chmod +x ~/binder/start.vscode
 # starting neo4j
 ~/binder/start.neo4j   &
 
-# starting adminmongo in parallel
+# starting vscode in parallel
 ~/binder/start.vscode   &
 
 

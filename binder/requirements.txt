@@ -10,7 +10,6 @@
 # sos-notebook
 
 #jupyter/jupyterlab extensions
-jupyterlab
 ipywidgets
 RISE
 
@@ -18,15 +17,11 @@ jupyter-server-proxy
 jupyter-vscode-proxy
 
 ###############################################################
-#          /jupyter/jupyterlab extensions/kernels              #
+#          python packages             #
 ###############################################################
 
 pprintpp
 
-
-###############################################################
-#          /jupyter/jupyterlab extensions/kernels             #
-###############################################################
 
 numpy
 pandas
@@ -37,7 +32,6 @@ ipython-cypher
 networkx
 igraph
 jgraph
-
 
 
 

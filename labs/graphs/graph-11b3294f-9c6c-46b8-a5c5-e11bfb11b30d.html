@@ -1,0 +1,53 @@
+
+    <html>
+    <head>
+      <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+      <meta content="utf-8" http-equiv="encoding">    
+      <script type="text/javascript" src="https://thedatasociety.github.io/resources/purl/lab-neo4j/graphdrawer/vis.js"></script>
+      <link   type="text/css"       href="https://thedatasociety.github.io/resources/purl/lab-neo4j/graphdrawer/vis.css" rel="stylesheet" >
+    </head>
+    <body>
+
+    <div id="11b3294f-9c6c-46b8-a5c5-e11bfb11b30d"></div>
+
+    <script type="text/javascript">
+      var nodes = [{"id": 5, "label": "\n:Person", "group": "Person", "title": "Type(s) = Person <br/> Properties = {'name': 'Matheus'}"}, {"id": 6, "label": "\n:Movie", "group": "Movie", "title": "Type(s) = Movie <br/> Properties = {'title': 'Inglourious Basterds', 'year': 2009}"}, {"id": 7, "label": "\n:Person", "group": "Person", "title": "Type(s) = Person <br/> Properties = {'name': 'Lais'}"}, {"id": 3, "label": "\n:Person", "group": "Person", "title": "Type(s) = Person <br/> Properties = {'name': 'Marcos'}"}, {"id": 2, "label": "\n:Person", "group": "Person", "title": "Type(s) = Person <br/> Properties = {'name': 'Asdrubal'}"}];
+      var edges = [{"from": 5, "to": 6, "label": "LIKES"}, {"from": 7, "to": 6, "label": "LIKES"}];
+
+      var container = document.getElementById("11b3294f-9c6c-46b8-a5c5-e11bfb11b30d");
+
+      var data = {
+        nodes: nodes,
+        edges: edges
+      };
+
+      var options = {
+          nodes: {
+              shape: 'dot',
+              size: 25,
+              font: {
+                  size: 14
+              }
+          },
+          edges: {
+              font: {
+                  size: 14,
+                  align: 'middle'
+              },
+              color: 'gray',
+              arrows: {
+                  to: {enabled: true, scaleFactor: 0.5}
+              },
+              smooth: {enabled: false}
+          },
+          physics: {
+              enabled: true
+          }
+      };
+
+      var network = new vis.Network(container, data, options);
+
+    </script>
+    </body>
+    </html>
+    

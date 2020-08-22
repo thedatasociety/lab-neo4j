@@ -4,29 +4,18 @@
 #          jupyter/jupyterlab extensions/kernels              #
 ###############################################################
 
-
-# Beakerx installation 
-# echo "Beakerx install"
-# beakerx install
-# echo "Beakerx extensions install"
-# jupyter labextension install @jupyter-widgets/jupyterlab-manager --no-build 
-# jupyter labextension install beakerx-jupyterlab --no-build 
+echo "IPywidgets Jupyterlab"
+jupyter labextension install @jupyter-widgets/jupyterlab-manager
 
 
 # Table of contents Jupyter Lab Extension
 echo "Table of contents Jupyter Lab extension install"
 jupyter labextension install @jupyterlab/toc --no-build 
 
-# Jupyter/Jupyterlab extension for proxying internal applications
-# echo "Jupyter/Jupyterlab proxy extension install"
-# jupyter serverextension enable --py jupyter_server_proxy
-# jupyter labextension install jupyterlab-server-proxy
-
 
 # Building everything up
 echo "Building everything up (jupyter lab build)"
 jupyter lab build 
-
 
 ###############################################################
 #             moving to a local installation folder           #
@@ -44,15 +33,20 @@ export NEO4J_VERSION=3.5.8
 echo "export NEO4J_VERSION=${NEO4J_VERSION}" >> ~/.bashrc
 echo "export NEO4J_VERSION=${NEO4J_VERSION}" >> ~/.profile
 
-export NEO4J_HOME=$(pwd)/neo4j-${NEO4J_VERSION}
+export NEO4J_HOME=$(pwd)/neo4j-community-${NEO4J_VERSION}
 echo "export NEO4J_HOME=${NEO4J_HOME}"       >> ~/.bashrc
 echo "export NEO4J_HOME=${NEO4J_HOME}"       >> ~/.profile
 
-wget https://neo4j.com/artifact.php?name=neo4j-community-${NEO4J_VERSION}-unix.tar.gz -q          && \
-mv   artifact.php?name=neo4j-community-${NEO4J_VERSION}-unix.tar.gz neo4j-${NEO4J_VERSION}.tar.gz && \
-tar  -xvf neo4j-${NEO4J_VERSION}.tar.gz >/dev/null                                                && \
-rm   neo4j-${NEO4J_VERSION}.tar.gz                                                                && \
-mv   neo4j-community-${NEO4J_VERSION} neo4j-${NEO4J_VERSION}
+
+wget https://neo4j.com/artifact.php?name=neo4j-community-${NEO4J_VERSION}-unix.tar.gz -q
+tar -xvf artifact.php?name=neo4j-community-${NEO4J_VERSION}-unix.tar.gz >/dev/null
+rm artifact.php?name=neo4j-community-${NEO4J_VERSION}-unix.tar.gz
+
+# wget https://neo4j.com/artifact.php?name=neo4j-community-${NEO4J_VERSION}-unix.tar.gz -q          && \
+# mv   artifact.php?name=neo4j-community-${NEO4J_VERSION}-unix.tar.gz neo4j-${NEO4J_VERSION}.tar.gz && \
+# tar  -xvf neo4j-${NEO4J_VERSION}.tar.gz >/dev/null                                                && \
+# rm   neo4j-${NEO4J_VERSION}.tar.gz                                                                && \
+# mv   neo4j-community-${NEO4J_VERSION} neo4j-${NEO4J_VERSION}
 
 # adding bin and sbin to $path
 echo "export PATH=\$PATH:\$NEO4J_HOME/bin"  >> ~/.bashrc

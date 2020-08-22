@@ -1,0 +1,53 @@
+
+    <html>
+    <head>
+      <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+      <meta content="utf-8" http-equiv="encoding">    
+      <script type="text/javascript" src="https://thedatasociety.github.io/resources/purl/lab-neo4j/graphdrawer/vis.js"></script>
+      <link   type="text/css"       href="https://thedatasociety.github.io/resources/purl/lab-neo4j/graphdrawer/vis.css" rel="stylesheet" >
+    </head>
+    <body>
+
+    <div id="686cac3e-bed0-4535-a92d-b67bbf5f6b6f"></div>
+
+    <script type="text/javascript">
+      var nodes = [{"id": 92, "label": "\n:Person", "group": "Person", "title": "Type(s) = Person <br/> Properties = {'name': 'Asdrubal'}"}, {"id": 10, "label": "\n:Movie", "group": "Movie", "title": "Type(s) = Movie <br/> Properties = {'title': 'Inglourious Basterds', 'year': 2009}"}, {"id": 60, "label": "\n:Drink", "group": "Drink", "title": "Type(s) = Drink <br/> Properties = {'name': 'Mountain Dew', 'calories': 9000}"}, {"id": 58, "label": "\n:Manufacturer", "group": "Manufacturer", "title": "Type(s) = Manufacturer <br/> Properties = {'name': 'Coca Cola'}"}, {"id": 61, "label": "\n:Drink", "group": "Drink", "title": "Type(s) = Drink <br/> Properties = {'name': 'Coke Zero', 'calories': 0}"}, {"id": 56, "label": "\n:Person", "group": "Person", "title": "Type(s) = Person <br/> Properties = {'name': 'Nicole', 'age': 24}"}, {"id": 93, "label": "\n:Person", "group": "Person", "title": "Type(s) = Person <br/> Properties = {'name': 'Marcos'}"}, {"id": 11, "label": "\n:Person", "group": "Person", "title": "Type(s) = Person <br/> Properties = {'name': 'Lais'}"}, {"id": 59, "label": "\n:Manufacturer", "group": "Manufacturer", "title": "Type(s) = Manufacturer <br/> Properties = {'name': 'Pepsi'}"}, {"id": 57, "label": "\n:Person", "group": "Person", "title": "Type(s) = Person <br/> Properties = {'name': 'Drew', 'age': 20}"}, {"id": 9, "label": "\n:Person", "group": "Person", "title": "Type(s) = Person <br/> Properties = {'name': 'Matheus'}"}];
+      var edges = [{"from": 58, "to": 61, "label": "MAKES"}, {"from": 56, "to": 60, "label": "LIKES"}, {"from": 56, "to": 61, "label": "LIKES"}, {"from": 11, "to": 10, "label": "LIKES"}, {"from": 59, "to": 60, "label": "MAKES"}, {"from": 57, "to": 60, "label": "LIKES"}, {"from": 9, "to": 10, "label": "LIKES"}];
+
+      var container = document.getElementById("686cac3e-bed0-4535-a92d-b67bbf5f6b6f");
+
+      var data = {
+        nodes: nodes,
+        edges: edges
+      };
+
+      var options = {
+          nodes: {
+              shape: 'dot',
+              size: 25,
+              font: {
+                  size: 14
+              }
+          },
+          edges: {
+              font: {
+                  size: 14,
+                  align: 'middle'
+              },
+              color: 'gray',
+              arrows: {
+                  to: {enabled: true, scaleFactor: 0.5}
+              },
+              smooth: {enabled: false}
+          },
+          physics: {
+              enabled: true
+          }
+      };
+
+      var network = new vis.Network(container, data, options);
+
+    </script>
+    </body>
+    </html>
+    

@@ -1,0 +1,53 @@
+
+    <html>
+    <head>
+      <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+      <meta content="utf-8" http-equiv="encoding">    
+      <script type="text/javascript" src="https://thedatasociety.github.io/resources/purl/lab-neo4j/graphdrawer/vis.js"></script>
+      <link   type="text/css"       href="https://thedatasociety.github.io/resources/purl/lab-neo4j/graphdrawer/vis.css" rel="stylesheet" >
+    </head>
+    <body>
+
+    <div id="2c9b2aca-1963-4344-bd11-2b0de729ff1f"></div>
+
+    <script type="text/javascript">
+      var nodes = [{"id": 2, "label": "\n:Person", "group": "Person", "title": "Type(s) = Person <br/> Properties = {'name': 'Asdrubal'}"}, {"id": 37, "label": "\n:Drink", "group": "Drink", "title": "Type(s) = Drink <br/> Properties = {'name': 'Mountain Dew', 'calories': 9000}"}, {"id": 70, "label": "\n:Person", "group": "Person", "title": "Type(s) = Person <br/> Properties = {'name': 'Asdrubal'}"}, {"id": 90, "label": "\n\n:TipoA (meu primeiro n\u00f3)", "group": "TipoA", "title": "Type(s) = TipoA <br/> Properties = {'propriedade2': 'valor2', 'propriedade1': 'valor1', 'label': 'meu primeiro n\u00f3'}"}, {"id": 35, "label": "\n:Manufacturer", "group": "Manufacturer", "title": "Type(s) = Manufacturer <br/> Properties = {'name': 'Coca Cola'}"}, {"id": 55, "label": "\n:Drink", "group": "Drink", "title": "Type(s) = Drink <br/> Properties = {'name': 'Coke Zero', 'calories': 0}"}, {"id": 5, "label": "\n:Person", "group": "Person", "title": "Type(s) = Person <br/> Properties = {'name': 'Matheus'}"}, {"id": 6, "label": "\n:Movie", "group": "Movie", "title": "Type(s) = Movie <br/> Properties = {'title': 'Inglourious Basterds', 'year': 2009}"}, {"id": 1, "label": "\n:Person", "group": "Person", "title": "Type(s) = Person <br/> Properties = {'name': 'Drew', 'age': 20}"}, {"id": 7, "label": "\n:Person", "group": "Person", "title": "Type(s) = Person <br/> Properties = {'name': 'Lais'}"}, {"id": 36, "label": "\n:Manufacturer", "group": "Manufacturer", "title": "Type(s) = Manufacturer <br/> Properties = {'name': 'Pepsi'}"}, {"id": 3, "label": "\n:Person", "group": "Person", "title": "Type(s) = Person <br/> Properties = {'name': 'Marcos'}"}, {"id": 0, "label": "\n:Person", "group": "Person", "title": "Type(s) = Person <br/> Properties = {'name': 'Nicole', 'age': 24}"}, {"id": 71, "label": "\n:Person", "group": "Person", "title": "Type(s) = Person <br/> Properties = {'name': 'Marcos'}"}];
+      var edges = [{"from": 35, "to": 55, "label": "MAKES"}, {"from": 5, "to": 6, "label": "LIKES"}, {"from": 1, "to": 37, "label": "LIKES"}, {"from": 7, "to": 6, "label": "LIKES"}, {"from": 36, "to": 37, "label": "MAKES"}, {"from": 0, "to": 37, "label": "LIKES"}, {"from": 0, "to": 55, "label": "LIKES"}];
+
+      var container = document.getElementById("2c9b2aca-1963-4344-bd11-2b0de729ff1f");
+
+      var data = {
+        nodes: nodes,
+        edges: edges
+      };
+
+      var options = {
+          nodes: {
+              shape: 'dot',
+              size: 25,
+              font: {
+                  size: 14
+              }
+          },
+          edges: {
+              font: {
+                  size: 14,
+                  align: 'middle'
+              },
+              color: 'gray',
+              arrows: {
+                  to: {enabled: true, scaleFactor: 0.5}
+              },
+              smooth: {enabled: false}
+          },
+          physics: {
+              enabled: true
+          }
+      };
+
+      var network = new vis.Network(container, data, options);
+
+    </script>
+    </body>
+    </html>
+    

@@ -1,0 +1,53 @@
+
+    <html>
+    <head>
+      <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+      <meta content="utf-8" http-equiv="encoding">    
+      <script type="text/javascript" src="https://thedatasociety.github.io/resources/purl/lab-neo4j/graphdrawer/vis.js"></script>
+      <link   type="text/css"       href="https://thedatasociety.github.io/resources/purl/lab-neo4j/graphdrawer/vis.css" rel="stylesheet" >
+    </head>
+    <body>
+
+    <div id="1ab10a9c-265c-4081-8387-e42dc1e7c923"></div>
+
+    <script type="text/javascript">
+      var nodes = [{"id": 113, "label": "\n:Person", "group": "Person", "title": "Type(s) = Person <br/> Properties = {'name': 'Marcos'}"}, {"id": 112, "label": "\n:Person", "group": "Person", "title": "Type(s) = Person <br/> Properties = {'name': 'Asdrubal'}"}, {"id": 135, "label": "\n\n:TipoA (meu primeiro n\u00f3)", "group": "TipoA", "title": "Type(s) = TipoA <br/> Properties = {'propriedade2': 'valor2', 'propriedade1': 'valor1', 'label': 'meu primeiro n\u00f3'}"}, {"id": 43, "label": "\n\n:Pessoa (Prof. Fulano)", "group": "Pessoa", "title": "Type(s) = Pessoa <br/> Properties = {'profissao': 'Professor', 'nome': 'Fulano Silva', 'label': 'Prof. Fulano'}"}];
+      var edges = [];
+
+      var container = document.getElementById("1ab10a9c-265c-4081-8387-e42dc1e7c923");
+
+      var data = {
+        nodes: nodes,
+        edges: edges
+      };
+
+      var options = {
+          nodes: {
+              shape: 'dot',
+              size: 25,
+              font: {
+                  size: 14
+              }
+          },
+          edges: {
+              font: {
+                  size: 14,
+                  align: 'middle'
+              },
+              color: 'gray',
+              arrows: {
+                  to: {enabled: true, scaleFactor: 0.5}
+              },
+              smooth: {enabled: false}
+          },
+          physics: {
+              enabled: true
+          }
+      };
+
+      var network = new vis.Network(container, data, options);
+
+    </script>
+    </body>
+    </html>
+    
