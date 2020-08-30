@@ -1,7 +1,9 @@
 FROM ubuntu:19.04
 
+RUN sed -i -e 's|disco|eoan|g' /etc/apt/sources.list
 RUN apt-get -qq update && \
-    apt-get -qq install --yes --no-install-recommends locales curl git htop vim wget python3-pip less unzip \
+    apt-get -qq install --yes --no-install-recommends locales curl git htop vim wget python3-pip less unzip
+
 
 # Set up locales properly
 RUN echo "en_US.UTF-8 UTF-8" > /etc/locale.gen && \
@@ -19,7 +21,7 @@ ARG NB_USER=thedatasociety
 ARG NB_UID=1000
 ARG GIT_PREFIX=https://github.com
 ARG GIT_USER=thedatasociety
-ARG GIT_REPO=lab-template
+ARG GIT_REPO=lab-neo4j
 
 ENV USER ${NB_USER}
 ENV HOME /home/${NB_USER}
@@ -39,8 +41,8 @@ RUN git clone ${GIT_PREFIX}/${GIT_USER}/${GIT_REPO}
 WORKDIR /jupyter/data/${GITHUB_REPO}
 
 RUN apt-get install $(grep -vE "^\s*#" ./binder/apt.txt  | tr "\n" " ")
-RUN pip3 install -r ./binder/requirements.txt
-RUN chmod +x binder/postBuild
+RUN pip3 install -U setuptools
+RUN pip3 install -r ./${GIT_REPO}/binder/requirements.txt
 
 RUN apt-get -qq purge && \
     apt-get -qq clean && \
@@ -51,12 +53,12 @@ RUN apt-get -qq purge && \
 # RUN mkdir conda-bld
 # RUN rm conda-bld -R
 
+# Make sure that postBuild scripts are marked executable before executing them
+RUN chmod +x ./${GIT_REPO}/binder/postBuild
 # We always want containers to run as non-root
 USER ${NB_USER}
 
-# Make sure that postBuild scripts are marked executable before executing them
-RUN chmod +x binder/postBuild
-RUN ./binder/postBuild
+RUN ./${GIT_REPO}/binder/postBuild
 
 # Specify the default command to run
 CMD ["jupyter", "notebook", "--ip", "0.0.0.0"]
