@@ -143,6 +143,11 @@ repo2docker -p 8888:8888 \
             jupyter lab --ip 0.0.0.0 --NotebookApp.token='dstoken1234567'
 
 ```
+Quick way to build and start a container from this repository:
+
+```bash
+repo2docker -p 8888:8888 ./ jupyter lab --ip 0.0.0.0
+```
 
 **Please read the section** [Accessing your Docker container](#accessing-your-docker-container) for details about running/accessing your container.
 
